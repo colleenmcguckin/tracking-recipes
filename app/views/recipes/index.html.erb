@@ -1,9 +1,15 @@
-<div ng-app="app">
-  {{ 1 + 1 }}
-</div>
-
 <h1>Recipes</h1>
 
-<h2>
-  
-</h2>
+<div ng-app="app">
+  <div ng-controller="recipesCtrl" ng-init="setup()">
+    <div>
+      <div ng-repeat="recipe in recipes">
+          <img src="{{recipe.image}}">
+          <h2>{{recipe.title}}</h2>
+          <h3>Rated: {{recipe.rating}} Stars</h3>
+          <h3>Time: {{recipe.time}} Minutes</h3>
+          <p>{{recipe.instructions}}</p>
+      </div>
+    </div>
+  </div>
+</div>
