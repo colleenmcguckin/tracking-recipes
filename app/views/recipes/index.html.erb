@@ -1,9 +1,20 @@
 <h1>Recipes</h1>
 
+
 <div ng-app="app">
   <div ng-controller="recipesCtrl" ng-init="setup()">
+
+    <div class="form-group">
+      <h2>Search for Recipes</h2>
+      <input ng-model="recipeFilter" list="recipes" placeholder="Live Search">
+          
+      <datalist id="recipes">
+        <option ng-repeat="recipe in recipes">{{ recipe.title }}</option>
+      </datalist>
+    </div>
+
     <div>
-      <div ng-repeat="recipe in recipes">
+      <div ng-repeat="recipe in recipes | filter: { title: recipeFilter }">
           <img src="{{recipe.image}}">
           <h2>{{recipe.title}}</h2>
           <h3>Rated: {{recipe.rating}} Stars</h3>
