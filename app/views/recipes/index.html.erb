@@ -2,16 +2,18 @@
 
 
 <div ng-app="app">
+
   <div ng-controller="recipesCtrl" ng-init="setup()">
 
     <div class="form-group">
-      <h2>Search for Recipes</h2>
+      <h2>Search for Recipes:</h2>
       <input ng-model="recipeFilter" list="recipes" placeholder="Live Search">
           
       <datalist id="recipes">
         <option ng-repeat="recipe in recipes">{{ recipe.title }}</option>
       </datalist>
     </div>
+    </br>
 
     <div>
       <div ng-repeat="recipe in recipes | filter: { title: recipeFilter }">
