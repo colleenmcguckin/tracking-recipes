@@ -5,9 +5,3 @@ require 'jasmine'
 #   #   assert true
 #   # end
 # end
-
-describe("search function", function() {
-  it("shows what you searched for", function() {
-    expect().toEqual("Hello world!");
-  });
-});
